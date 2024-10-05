@@ -15,10 +15,10 @@
                 <li class="items"><a href="#skill">Compétences</a></li>
                 <li class="items"><a href="#Port">Portfolio</a></li>
                 <li><a href="#contact"><button>Contact</button></a></li>
-                <li onclick="showSidebar()"><a href="#"><ion-icon name="menu-outline"></ion-icon></a></li>
+                <li onclick="showSidebar()"><ion-icon name="menu-outline"></ion-icon></li>
             </ul>
             <ul class="sidebar">
-                <li onclick="closeSidebar()"><a href="#"><ion-icon name="close-outline"></ion-icon></a></li>
+                <li onclick="closeSidebar()"><ion-icon name="close-outline"></ion-icon></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skill">Compétences</a></li>
                 <li><a href="#Port">Portfolio</a></li>
@@ -34,7 +34,7 @@
       <div class="home-content">
         <h1>Bonjour, je m'appelle Modestin Lissanou</h1>
         <h3>Développeur Full Stack</h3>
-        <p>Je suis étudiant en deuxième année de Bachelor en développement web à HETIC. Animé par une passion ardente pour le développement, je suis à la recherche d'un contrat d'apprentissage d'un durée de 12 à 24 mois pour mettre en pratique mes compétences. Mon engagement inébranlable et mon désir constant de progresser illustrent ma détermination à exceller dans le domaine en constante évolution.</p>
+        <p>Je suis étudiant en deuxième année de Bachelor en développement web à HETIC. Animé par une passion ardente pour le développement, je suis à la recherche d'un contrat d'apprentissage d'une durée de 12 à 24 mois pour mettre en pratique mes compétences. Mon engagement inébranlable et mon désir constant de progresser illustrent ma détermination à exceller dans le domaine en constante évolution.</p>
         <div class="btn-box">
             <a href="#contact">Contactez-moi</a>
             <a href="./asset/CV_Contrat_Apprentissage.pdf" download="CV_Contrat_Apprentissage">Curriculum Vitae</a>
@@ -190,7 +190,7 @@
           <div class="box">
             <div class="content">
               <h3>Projet 01: IMADE</h3>
-              <p>Une plateforme qui permet de mettre en vente ses articles. Simple d'utilisateur, compte gratuit, accès à son tableau de bord pour l'ajout d'article. Pour ajouter un article, un paiement de 344FCFA doit être effectué mais il est possible de faire un abonnement annuel de 5044FCA, qui permet d'ajouter autant d'articles qu'on le souhaite pendant 365jours.Pour l'instant, il est utilisable qu'en Afrique et une version Android existe</p>
+              <p>Une plateforme qui permet de mettre en vente ses articles. Simple d'utilisation, compte gratuit, accès à son tableau de bord pour l'ajout d'article. Pour ajouter un article, un paiement de 344FCFA doit être effectué mais il est possible de faire un abonnement annuel de 5044FCA, qui permet d'ajouter autant d'articles qu'on le souhaite pendant 365jours.Pour l'instant, il est utilisable qu'en Afrique et une version Android existe</p>
               <a href="https://imade.kesug.com">Voir</a>
             </div>
           </div>
@@ -238,6 +238,15 @@
         <div class="card">
           <div class="box">
             <div class="content">
+              <h3>LogiCampus</h3>
+              <p>C'est une plateforme dédiée aux nouveaux bacheliers. Elle leur permet de trouver des logements sans se déplacer. En un clique, ils ont leur appartements. Aujourd'hui, elle se limite qu'à Dangbo, une ville au nord du Bénin, mais d'autres sont en cours de route.</p>
+              <a href="https://LogicCampus.kesug.com">Voir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="content">
               <h3>More Projects</h3>
               <p>Plusieurs projets du genre sont hébergés sur mon github, des sites vitrines, au gestions de données en passant par des sites e-commerce. Je vous invite à aller les découvrir.</p>
               <a href="https://github.com/Lm-hg">Voir</a>
@@ -256,20 +265,21 @@
         <div class="center">
           <form action="https://api.web3forms.com/submit" method="post">
                 <input type="hidden" name="access_key" value="ea160619-3a11-4eb3-85cb-51d5c3a3e3b4">
-              <input type="text" name="name" placeholder="nom">
-              <input type="text" name="prenom" placeholder="prenoms">
-              <input type="email" placeholder="email">
-              <textarea name="" placeholder="Votre message"></textarea>
+              <input type="text" name="name" placeholder="nom" required>
+              <input type="text" name="prenom" placeholder="prenoms" required>
+              <input type="email" placeholder="email" required>
+              <textarea name="" placeholder="Votre message" required></textarea>
               <input type="submit" value="Envoyer">
           </form>
           <h2>&nbsp;</h2>
         </div>
       </div>
+      <h2 id="clique">
+        Clique
+    </h2>
     </section>
 </body>
-        <h2>
-            Clique
-        </h2>
+
         
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
