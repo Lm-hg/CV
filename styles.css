@@ -1,9 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-*{  
-    box-sizing: border-box;
-    padding: 0;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
 body{
     
     background-image: url("https://images.unsplash.com/photo-1718376282635-f8cfb20d2c02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90b3MtZmVlZHw5NHx8fGVufDB8fHx8fA%3D%3D");
@@ -143,22 +158,6 @@ h2{
         z-index: 9999;
       }
 }
-
-
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 
 .home{
     display: flex;
@@ -365,13 +364,7 @@ h2{
     padding: 0  10%;
   }
 
-  @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
-
-  
   #contact .container {
     position: absolute;
     width: 100%;
@@ -606,13 +599,7 @@ h2{
      font-size: 16px;
    }
  }
- @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: "Poppins", sans-serif;
- }
+
  
  #Port {
 
