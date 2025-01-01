@@ -134,6 +134,7 @@ h2{
     margin: 20%;
     text-align: center;
 }
+
 #clique{
   display: none;
 }
@@ -156,6 +157,11 @@ h2{
         color: #23c186;
         position: absolute;
         z-index: 9999;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+
       }
 }
 
