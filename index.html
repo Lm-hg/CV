@@ -6,10 +6,10 @@
     <title>PORTFOLIO</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="asset/logo.jpg">
+    <link rel="icon" href="asset/logo.png" type="image/png">
 <body>
     <header>
-        <img src="./asset/logo.jpg" alt="" class="logo">
+        <img src="./asset/logo.png" alt="" class="logo">
         <nav>
             <ul class="navlinks">
                 <li class="items"><a href="#home">Home</a></li>
@@ -35,10 +35,12 @@
       <div class="home-content">
         <h1>Bonjour, je m'appelle Modestin Lissanou</h1>
         <h3>Développeur Full Stack</h3>
-        <p>En tant qu’étudiant à HETIC spécialisé en développement web, je propose mes compétences techniques, ma créativité et mon énergie à une entreprise qui souhaite avancer avec un profil motivé et impliqué, dans le cadre d’un contrat d’apprentissage sur 12 à 24 mois.</p>
+        <p>Étudiant en Bachelor Développement Web à HETIC, passionné par la création de solutions web et mobiles.
+J’ai déjà publié plusieurs projets en production (Play Store, plateformes web, freelancing) et je maîtrise l’écosystème JavaScript du front au back.
+Je recherche une alternance pour contribuer à des projets concrets tout en consolidant mes compétences en React, Node.js, Flutter, SQL/NoSQL et déploiement.</p>
         <div class="btn-box">
             <a href="#contact">Contactez-moi</a>
-            <a href="./asset/CV_alternance.pdf" download="CV_alternace">Curriculum Vitae</a>
+            <a href="./asset/CV_Alternance_Modestin_HOUNGA.pdf" download="CV_alternace">Curriculum Vitae</a>
         </div>
         <div class="home-sci">
             <a href="https://linkedin.com/in/modestin"> <i class="fab fa-linkedin"></i></a>
@@ -78,7 +80,7 @@
               <div class="ag-courses-item_bg"></div>
       
               <div class="ag-courses-item_title">
-                JavaScrip <i class="fab fa-js"></i>, Python <i class="fab fa-python"></i>, PHP <i class="fab fa-php"></i>
+                JavaScrip <i class="fab fa-js"></i>, Python <i class="fab fa-python"></i>, PHP <i class="fab fa-php">,</i> JAVA <i class="fab fa-java"></i>, Dart <i class="fab fa-dart"></i>
               </div>
       
               <div class="ag-courses-item_date-box">
@@ -167,7 +169,7 @@
               <div class="ag-courses-item_bg"></div>
       
               <div class="ag-courses-item_title">
-                Gestion de base de données SQL <i class="fas fa-database"></i>, Mongo, création, intégration et consommation d'un API
+                Gestion de base de données SQL <i class="fas fa-database"></i>, Mongo,Firebase, création, intégration et consommation d'un API
               </div>
       
               <div class="ag-courses-item_date-box">
@@ -309,10 +311,41 @@
 
       </div>
     </section>
+
+  <!-- Conteneur pour les flocons de neige -->
+  <div id="snow" aria-hidden="true"></div>
+
 </body>
 
-        
+    <script>
+      function createSnowflakes() {
+        const snowContainer = document.getElementById("snow");
+        if (!snowContainer) return; 
+        let snowflakeCount = 50;
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            snowflakeCount = 10;
+        } 
+
+        for (let i = 0; i < snowflakeCount; i++) {
+            const snowflake = document.createElement("div");
+            snowflake.className = "snowflake";
+            snowflake.textContent = "❄"; 
+            snowflake.style.left = Math.random() * 100 + "vw";
+            snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+            snowflake.style.animationDelay = Math.random() * 5 + "s";
+            snowflake.style.animationDuration = Math.random() * 10 + 5 + "s";
+            snowContainer.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 15000);
+        }
+      }
+
+      createSnowflakes();
+      setInterval(createSnowflakes, 5000);
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </html>
