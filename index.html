@@ -1,351 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="asset/logo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modestin Lissanou — Développeur Full Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <header>
-        <img src="./asset/logo.png" alt="" class="logo">
-        <nav>
-            <ul class="navlinks">
-                <li class="items"><a href="#home">Home</a></li>
-                <li class="items"><a href="#skill">Compétences</a></li>
-                <li class="items"><a href="#Port">Portfolio</a></li>
-                <li><a href="#contact"><button>Contact</button></a></li>
-                <li onclick="showSidebar()"><ion-icon name="menu-outline"></ion-icon></li>
-            </ul>
-            <ul class="sidebar">
-                <li onclick="closeSidebar()"><ion-icon name="close-outline"></ion-icon></li>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skill">Compétences</a></li>
-                <li><a href="#Port">Portfolio</a></li>
-                <video src="https://traversymedia.com/downloads/videos/explore.mp4" muted loop autoplay></video>
-               <div class="overlay"></div>
-    <div class="text">
-      <h2>NEVER GIVE UP </h2> 
+
+  <!-- WebGL Shader Canvas -->
+  <canvas id="shader-bg"></canvas>
+
+  <!-- Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">ML<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home" data-nav>Home</a></li>
+        <li><a href="#skills" data-nav>Skills</a></li>
+        <li><a href="#projects" data-nav>Projets</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+      <a href="./asset/CV_Alternance_Modestin_HOUNGA.pdf" download class="nav-cta">
+        <span>CV</span><i class="fas fa-download"></i>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-      <div class="home-content">
-        <h1>Bonjour, je m'appelle Modestin Lissanou</h1>
-        <h3>Développeur Full Stack</h3>
-        <p>Étudiant en Bachelor Développement Web à HETIC, passionné par la création de solutions web et mobiles.
-J’ai déjà publié plusieurs projets en production (Play Store, plateformes web, freelancing) et je maîtrise l’écosystème JavaScript du front au back.
-Je recherche une alternance pour contribuer à des projets concrets tout en consolidant mes compétences en React, Node.js, Flutter, SQL/NoSQL et déploiement.</p>
-        <div class="btn-box">
-            <a href="#contact">Contactez-moi</a>
-            <a href="./asset/CV_Alternance_Modestin_HOUNGA.pdf" download="CV_alternace">Curriculum Vitae</a>
-        </div>
-        <div class="home-sci">
-            <a href="https://linkedin.com/in/modestin"> <i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Lm-hg"> <i class="fab fa-github"></i></a>
-        </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <button class="sidebar-close" id="sidebar-close" aria-label="Fermer">✕</button>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="sidebar-quote">
+      <span>"Never Give Up"</span>
     </div>
-    <div id="image">
-      <img src="./asset/modestin.jpg" alt="photo_de_moi">
-    </div>
-    
-    </section>
-  <div id="parts">
-    <h1>Mes Compétences</h1>
   </div>
-    <section id="skill">
-      <div class="ag-format-container">
-        <div class="ag-courses_box">
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Maîtrise de HTML5 <i class="fab fa-html5"></i> et CSS3 <i class="fab fa-css3-alt"></i>
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  12.09.2022
-                </span>
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                JavaScrip <i class="fab fa-js"></i>, Python <i class="fab fa-python"></i>, PHP <i class="fab fa-php">,</i> JAVA <i class="fab fa-java"></i>, Dart <i class="fab fa-dart"></i>
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  2024
-                </span>
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Responsive Web Design
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  2023
-                </span>
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Débogage et Optimation
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  2022
-                </span>
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Utilisation des outils de développement, npm <i class="fab fa-npm"></i> et git <i class="fas fa-code-branch"></i>, reactJS <i class="fab fa-react"></i>,
-                ExpressJS, Node <i class="fab fa-node"></i>
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  2022
-                </span>
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Adaptibilité et apprentissage continue
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg">
-              </div>
-              <div class="ag-courses-item_title">
-                Compétences UX/UI
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a href="" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-      
-              <div class="ag-courses-item_title">
-                Gestion de base de données SQL <i class="fas fa-database"></i>, Mongo,Firebase, création, intégration et consommation d'un API
-              </div>
-      
-              <div class="ag-courses-item_date-box">
-                Start:
-                <span class="ag-courses-item_date">
-                  2022
-                </span>
-              </div>
-            </a>
-          </div>
-      
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-grid">
+      <div class="hero-text" data-reveal>
+        <p class="hero-eyebrow"><span class="mono">01</span> Bonjour, je m'appelle</p>
+        <h1 class="hero-name">Modestin<br><span class="gradient-text">Lissanou</span></h1>
+        <h2 class="hero-role">Développeur <span class="type-cursor" id="typed-role"></span></h2>
+        <p class="hero-bio">Étudiant en Bachelor Développement Web à <strong>HETIC</strong>. Projets en production sur le Play Store, plateformes web et freelancing. Full Stack JS — React, Node.js, Flutter, SQL/NoSQL. Je cherche une <strong>alternance</strong>.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Me contacter</a>
+          <a href="./asset/CV_Alternance_Modestin_HOUNGA.pdf" download class="btn btn-outline">Télécharger CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/modestin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Lm-hg" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
-    </section>
-    <div id="parts">
-      <h1>PORTFOLIO</h1>
+      <div class="hero-visual" data-reveal-delay>
+        <div class="photo-frame">
+          <img src="./asset/modestin.jpg" alt="Modestin Lissanou" loading="eager">
+          <div class="photo-glow"></div>
+        </div>
+        <div class="floating-badge badge-1"><i class="fab fa-react"></i> React</div>
+        <div class="floating-badge badge-2"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="floating-badge badge-3"><i class="fab fa-flutter"></i> Flutter</div>
+      </div>
     </div>
-    <section id="Port">
-      <div class="container">
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>Mindly</h3>
-              <p>"Mindly est un réseau social dédié aux débats rationnels et constructifs. Il rassemble des esprits analytiques autour de discussions thématiques hebdomadaires, valorisant la pensée critique, la logique et la vérification des faits. Sur Mindly, la qualité des arguments prime sur la quantité d'interactions, offrant un espace d'échange où rigueur intellectuelle et ouverture d'esprit sont au cœur de la communauté."</p>
-              <a href="https://play.google.com/store/apps/details?id=com.lmhg.mindly">Voir</a>
-            </div>
-          </div>
-      </div>
-      <div class="container">
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>WHERE'S</h3>
-              <p>"Where’s, le jeu qui vous fait voyager !" est un jeu passionnant et éducatif qui vous plonge dans une aventure géographique unique. Observez quatre photos intrigantes, analysez les indices cachés et tentez de deviner la ville ou le pays qu'elles représentent. Ce défi ludique mettra à l’épreuve vos connaissances du monde entier, que vous jouiez seul ou avec des amis.</p>
-              <a href="https://play.google.com/store/apps/details?id=com.lmhg.WhereS">Voir</a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>Projet 01: IMADE</h3>
-              <p>Une plateforme qui permet de mettre en vente ses articles. Simple d'utilisation, compte gratuit, accès à son tableau de bord pour l'ajout d'article. Pour ajouter un article, un paiement de 344FCFA doit être effectué mais il est possible de faire un abonnement annuel de 5044FCA, qui permet d'ajouter autant d'articles qu'on le souhaite pendant 365jours.Pour l'instant, il est utilisable qu'en Afrique et une version Android existe</p>
-              <a href="https://imade.kesug.com">Voir</a>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="card">
-            <div class="box">
-              <div class="content">
-                <h3>Projet Unity</h3>
-                <p>Unity, une plateforme conçue pour échanger des messages, publier des écrits, partager des statuts et liker les contenus de votre réseau. L'objectif est de faciliter la communication et l'interaction dans un environnement convivial et sécurisé.</p>
-                <a href="https://poeme.kesug.com">Voir</a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="card">
-              <div class="box">
-                <div class="content">
-                  <h3>Livre intitulé VEGAN</h3>
-                  <p>Vegan est un livre publié en Septembre 2023 par la maison d'édition Les Muses. Il raconte l'histoire de Végan, un orphelin n'ayant pas eu une vie des plus radieuses.Sa vie était un combat constant, jusqu’à ce qu’il fasse la rencontre de Marx, un compagnon d’infortune avec qui il partageait les épreuves et les rêves d’une vie meilleure.</p>
-                  <a href="https://www.laboutiqueafricavivre.com/film-reference/248755-vegan-9786204967837.html">Voir</a>
-                </div>
-              </div>
-            </div>
-      
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>Projet scolaire: NoTriche</h3>
-              <p>NoTriche est une extension chrome qui permet une fois activée, permet de détecter toute forme de tricheries et les stocke dans une base de données. Elle peut être utilisée dans le cadre d'un examen, et permettrait aux professeurs de détecter, tous les étudiants qui ont triché.</p>
-              <a href="https://github.com/Lm-hg/NoTriche">Voir</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>QR_Amour</h3>
-              <p>Découvrez une toute autre façon d'utiliser les qr code.Exprimez votre amour en utilisant les qr amour. Sur la plateforme, transformez n'importe quel message d'amour en qr amour puis l'envoyez à votre partenaire. Un paiement unique de 0,50 euro est requis avant d'utiliser les fonctionnalitées de la platement. Et pour qu'elle soit accessible à tous, plusieurs formes de paiement ont été créées.</p>
-              <a href="https://github.com/Lm-hg/QRAmour">Voir</a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>LogiCampus</h3>
-              <p>C'est une plateforme dédiée aux nouveaux bacheliers. Elle leur permet de trouver des logements sans se déplacer. En un clique, ils ont leur appartements. Aujourd'hui, elle se limite qu'à Dangbo, une ville au sud du Bénin, mais d'autres sont en cours de route.</p>
-              <a href="https://LogicCampus.kesug.com">Voir</a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>MyBook</h3>
-              <p>Un espace en ligne dédié à la lecture, offrant un accès facile et interactif à une variété de livres, tout en rassemblant une communauté de passionnés qui partagent leurs expériences de lecture.</p>
-              <a href="https://mybook.kesug.com">Voir</a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="box">
-            <div class="content">
-              <h3>More Projects</h3>
-              <p>Plusieurs projets du genre sont hébergés sur mon github, des sites vitrines, au gestions de données en passant par des sites e-commerce. Je vous invite à aller les découvrir.</p>
-              <a href="https://github.com/Lm-hg">Voir</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div id="parts">
-      <h1>Contact</h1>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
-    <section id="contact">
-      <div class="container">
-        <div class="top"></div>
-        <div class="bottom">
-          <h2 id="clique">
-            Clique
-        </h2>
-        </div>
-        <div class="center">
-          <form action="https://api.web3forms.com/submit" method="post">
-                <input type="hidden" name="access_key" value="ea160619-3a11-4eb3-85cb-51d5c3a3e3b4">
-              <input type="text" name="name" placeholder="nom" required>
-              <input type="text" name="prenom" placeholder="prenoms" required>
-              <input type="email" placeholder="email" required>
-              <textarea name="" placeholder="Votre message" required></textarea>
-              <input type="submit" value="Envoyer">
-          </form>
-          <h2>&nbsp;</h2>
-        </div>
+  </section>
 
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow"><span class="mono">02</span> Compétences</p>
+      <h2 class="section-title">Ce que je maîtrise</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card" data-reveal data-delay="0">
+        <div class="skill-icon"><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i></div>
+        <h3>HTML5 & CSS3</h3>
+        <p>Balisage sémantique, animations, responsive design, accessibilité.</p>
+        <span class="skill-since">Depuis 2022</span>
       </div>
-    </section>
+      <div class="skill-card" data-reveal data-delay="1">
+        <div class="skill-icon"><i class="fab fa-js"></i><i class="fab fa-react"></i></div>
+        <h3>JavaScript / React</h3>
+        <p>ES6+, hooks, context, gestion d'état, SPA, optimisation.</p>
+        <span class="skill-since">Depuis 2022</span>
+      </div>
+      <div class="skill-card" data-reveal data-delay="2">
+        <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+        <h3>Node.js / Express</h3>
+        <p>APIs REST, middlewares, authentification JWT, déploiement.</p>
+        <span class="skill-since">Depuis 2022</span>
+      </div>
+      <div class="skill-card" data-reveal data-delay="3">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+        <h3>SQL / NoSQL</h3>
+        <p>MySQL, MongoDB, Firebase — modélisation, requêtes, intégration.</p>
+        <span class="skill-since">Depuis 2022</span>
+      </div>
+      <div class="skill-card" data-reveal data-delay="4">
+        <div class="skill-icon"><i class="fab fa-python"></i><i class="fab fa-java"></i></div>
+        <h3>Python / Java / PHP</h3>
+        <p>Scripting, back-end, POO, Dart / Flutter pour le mobile.</p>
+        <span class="skill-since">Depuis 2024</span>
+      </div>
+      <div class="skill-card" data-reveal data-delay="5">
+        <div class="skill-icon"><i class="fab fa-git-alt"></i><i class="fab fa-npm"></i></div>
+        <h3>Git & Outils</h3>
+        <p>Versioning, npm, débogage, UX/UI, apprentissage continu.</p>
+        <span class="skill-since">Depuis 2022</span>
+      </div>
+    </div>
+  </section>
 
-  <!-- Conteneur pour les flocons de neige -->
-  <div id="snow" aria-hidden="true"></div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow"><span class="mono">03</span> Portfolio</p>
+      <h2 class="section-title">Projets réalisés</h2>
+    </div>
 
+    <div class="projects-grid">
+
+      <article class="project-card featured" data-reveal>
+        <div class="project-accent" style="--accent:#6366f1"></div>
+        <div class="project-meta">
+          <span class="project-tag">Mobile · Play Store</span>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.lmhg.mindly" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>Mindly</h3>
+        <p>Réseau social dédié aux débats rationnels. Discussions thématiques hebdomadaires, pensée critique, vérification des faits. La qualité prime sur la quantité.</p>
+        <div class="project-stack"><span>Flutter</span><span>Firebase</span><span>Dart</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="1">
+        <div class="project-accent" style="--accent:#10b981"></div>
+        <div class="project-meta">
+          <span class="project-tag">Mobile · Play Store</span>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.lmhg.WhereS" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>Where's</h3>
+        <p>Jeu géographique éducatif — analysez 4 photos et devinez la ville ou le pays. Solo ou multijoueur, disponible sur le Play Store.</p>
+        <div class="project-stack"><span>Flutter</span><span>Dart</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="2">
+        <div class="project-accent" style="--accent:#f59e0b"></div>
+        <div class="project-meta">
+          <span class="project-tag">Web · Afrique</span>
+          <div class="project-links">
+            <a href="https://imade.kesug.com" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>IMADE</h3>
+        <p>Plateforme de vente d'articles avec tableau de bord, paiement intégré et abonnement annuel. Version Android disponible.</p>
+        <div class="project-stack"><span>PHP</span><span>MySQL</span><span>JS</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="0">
+        <div class="project-accent" style="--accent:#ec4899"></div>
+        <div class="project-meta">
+          <span class="project-tag">Web · Social</span>
+          <div class="project-links">
+            <a href="https://poeme.kesug.com" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>Unity</h3>
+        <p>Plateforme d'échange : messages, écrits, statuts, likes. Communication conviviale et sécurisée.</p>
+        <div class="project-stack"><span>Node.js</span><span>MongoDB</span><span>React</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="1">
+        <div class="project-accent" style="--accent:#3b82f6"></div>
+        <div class="project-meta">
+          <span class="project-tag">Chrome Extension</span>
+          <div class="project-links">
+            <a href="https://github.com/Lm-hg/NoTriche" target="_blank" aria-label="Voir"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h3>NoTriche</h3>
+        <p>Extension Chrome de détection de fraude académique en temps réel, stockage en base de données pour les professeurs.</p>
+        <div class="project-stack"><span>JavaScript</span><span>Chrome API</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="2">
+        <div class="project-accent" style="--accent:#ef4444"></div>
+        <div class="project-meta">
+          <span class="project-tag">Web · QR</span>
+          <div class="project-links">
+            <a href="https://github.com/Lm-hg/QRAmour" target="_blank" aria-label="Voir"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h3>QR_Amour</h3>
+        <p>Transformez un message d'amour en QR code unique. Paiement intégré, multi-format, expérience intime et originale.</p>
+        <div class="project-stack"><span>PHP</span><span>Stripe</span><span>QR API</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="0">
+        <div class="project-accent" style="--accent:#8b5cf6"></div>
+        <div class="project-meta">
+          <span class="project-tag">Web · Immobilier</span>
+          <div class="project-links">
+            <a href="https://LogicCampus.kesug.com" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>LogiCampus</h3>
+        <p>Plateforme logement pour nouveaux bacheliers au Bénin. Trouver un appartement sans se déplacer, en un clic.</p>
+        <div class="project-stack"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+      </article>
+
+      <article class="project-card" data-reveal data-delay="1">
+        <div class="project-accent" style="--accent:#06b6d4"></div>
+        <div class="project-meta">
+          <span class="project-tag">Livre · 2023</span>
+          <div class="project-links">
+            <a href="https://www.laboutiqueafricavivre.com/film-reference/248755-vegan-9786204967837.html" target="_blank" aria-label="Voir"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3>VEGAN (Livre)</h3>
+        <p>Publié en septembre 2023 par Les Muses. L'histoire de Végan, orphelin au parcours difficile, et de Marx, son compagnon d'infortune.</p>
+        <div class="project-stack"><span>Les Muses Éditions</span></div>
+      </article>
+
+      <article class="project-card github-card" data-reveal data-delay="2">
+        <div class="project-accent" style="--accent:#f97316"></div>
+        <div class="project-meta">
+          <span class="project-tag">+15 projets</span>
+          <div class="project-links">
+            <a href="https://github.com/Lm-hg" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h3>More on GitHub</h3>
+        <p>Sites vitrines, gestion de données, e-commerce, APIs. Retrouvez tous mes projets sur GitHub.</p>
+        <div class="project-stack"><span>React</span><span>Node</span><span>Flutter</span><span>+</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow"><span class="mono">04</span> Contact</p>
+      <h2 class="section-title">Travaillons ensemble</h2>
+    </div>
+
+    <div class="contact-layout" data-reveal>
+      <div class="contact-info">
+        <p>Je suis disponible pour une <strong>alternance</strong> dès maintenant. N'hésitez pas à me contacter pour discuter d'un projet ou d'une opportunité.</p>
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/modestin" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com/Lm-hg" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="post">
+        <input type="hidden" name="access_key" value="ea160619-3a11-4eb3-85cb-51d5c3a3e3b4">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" name="name" id="fname" placeholder=" " required>
+            <label for="fname">Nom</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="prenom" id="fprenom" placeholder=" " required>
+            <label for="fprenom">Prénom</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" id="femail" placeholder=" " required>
+          <label for="femail">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="fmessage" placeholder=" " rows="5" required></textarea>
+          <label for="fmessage">Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Envoyer</span><i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Modestin Lissanou — Conçu & développé avec ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
-    <script>
-      function createSnowflakes() {
-        const snowContainer = document.getElementById("snow");
-        if (!snowContainer) return; 
-        let snowflakeCount = 50;
-        if (window.matchMedia("(max-width: 768px)").matches) {
-            snowflakeCount = 10;
-        } 
-
-        for (let i = 0; i < snowflakeCount; i++) {
-            const snowflake = document.createElement("div");
-            snowflake.className = "snowflake";
-            snowflake.textContent = "❄"; 
-            snowflake.style.left = Math.random() * 100 + "vw";
-            snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
-            snowflake.style.animationDelay = Math.random() * 5 + "s";
-            snowflake.style.animationDuration = Math.random() * 10 + 5 + "s";
-            snowContainer.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 15000);
-        }
-      }
-
-      createSnowflakes();
-      setInterval(createSnowflakes, 5000);
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./script.js"></script>
 </html>

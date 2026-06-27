@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 3D - Version Finale</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles3d.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="asset/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Conteneur pour l'expérience 3D (Desktop uniquement) -->
+    <div id="canvas-container"></div>
+    
+    <!-- Instructions de navigation 3D -->
+    <div id="nav-instructions">
+        <p>🖱️ Cliquez sur une île pour ouvrir | ⬅️ ➡️ Utilisez les flèches pour naviguer</p>
+    </div>
+
+    <!-- Panneau Map qui s'ouvre au clic -->
+    <div id="map-panel">
+        <button class="close-btn" onclick="closeMapPanel()">✕</button>
+        <div id="map-content"></div>
+    </div>
+
+    <!-- Portfolio traditionnel (Mobile et fallback) -->
+    <div id="traditional-portfolio">
+        <header>
+            <img src="./asset/logo.png" alt="" class="logo">
+            <nav>
+                <ul class="navlinks">
+                    <li class="items"><a href="#home">Home</a></li>
+                    <li class="items"><a href="#skill">Compétences</a></li>
+                    <li class="items"><a href="#Port">Portfolio</a></li>
+                    <li><a href="#contact"><button>Contact</button></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="home">
+            <div class="home-content">
+                <h1>Bonjour, je m'appelle Modestin Lissanou</h1>
+                <h3>Développeur Full Stack</h3>
+                <p>Étudiant en Bachelor Développement Web à HETIC, passionné par la création de solutions web et mobiles.
+                J'ai déjà publié plusieurs projets en production (Play Store, plateformes web, freelancing) et je maîtrise l'écosystème JavaScript du front au back.
+                Je recherche une alternance pour contribuer à des projets concrets tout en consolidant mes compétences en React, Node.js, Flutter, SQL/NoSQL et déploiement.</p>
+                <div class="btn-box">
+                    <a href="#contact">Contactez-moi</a>
+                    <a href="./asset/CV_Alternance_Modestin_HOUNGA.pdf" download="CV_alternace">Curriculum Vitae</a>
+                </div>
+                <div class="home-sci">
+                    <a href="https://linkedin.com/in/modestin"> <i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Lm-hg"> <i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill">
+            <h2>Mes Compétences</h2>
+            <div class="ag-format-container">
+                <div class="ag-courses_box">
+                    <div class="ag-courses_item">
+                        <div class="ag-courses-item_title">
+                            Maîtrise de HTML5 <i class="fab fa-html5"></i> et CSS3 <i class="fab fa-css3-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ag-courses_item">
+                        <div class="ag-courses-item_title">
+                            JavaScript <i class="fab fa-js"></i>, Python <i class="fab fa-python"></i>, PHP <i class="fab fa-php"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Port">
+            <h2>Portfolio</h2>
+            <div class="container">
+                <div class="card">
+                    <div class="box">
+                        <div class="content">
+                            <h3>Mindly</h3>
+                            <p>Un réseau social dédié aux débats rationnels et constructifs.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.lmhg.mindly">Voir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="ea160619-3a11-4eb3-85cb-51d5c3a3e3b4">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        console.log('=== CHARGEMENT PORTFOLIO 3D ===');
+        console.log('Largeur écran:', window.innerWidth);
+        
+        // Importer directement Three.js pour vérifier
+        try {
+            const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js');
+            console.log('✓ Three.js chargé:', THREE);
+            
+            // Maintenant charger le module scene3d
+            const sceneModule = await import('./scene3d.js?v=' + Date.now());
+            console.log('✓ Module scene3d chargé');
+            
+        } catch (error) {
+            console.error('✗ Erreur de chargement:', error);
+            console.error('Stack:', error.stack);
+            
+            // Fallback : afficher la version traditionnelle
+            document.getElementById('canvas-container').style.display = 'none';
+            document.getElementById('traditional-portfolio').style.display = 'block';
+            document.getElementById('nav-instructions').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
