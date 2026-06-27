@@ -1,5 +1,5 @@
 /* ============================================================
-   1. WEBGL SHADER BACKGROUND
+   1. WEBGL SHADER BACKGROUND fond
    ============================================================ */
 (function () {
   const canvas = document.getElementById('shader-bg');
