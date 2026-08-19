@@ -17,53 +17,36 @@
     uniform float u_time;
     uniform vec2  u_res;
 
-    // Smooth noise
     float hash(vec2 p) {
-      p = fract(p * vec2(234.34, 435.345));
-      p += dot(p, p + 34.23);
-      return fract(p.x * p.y);
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
     }
     float noise(vec2 p) {
-      vec2 i = floor(p);
-      vec2 f = fract(p);
-      f = f * f * (3.0 - 2.0 * f);
+      vec2 cell = floor(p);
+      vec2 local = fract(p);
+      local = local * local * (3.0 - 2.0 * local);
       return mix(
-        mix(hash(i), hash(i + vec2(1,0)), f.x),
-        mix(hash(i + vec2(0,1)), hash(i + vec2(1,1)), f.x),
-        f.y
+        mix(hash(cell), hash(cell + vec2(1.0, 0.0)), local.x),
+        mix(hash(cell + vec2(0.0, 1.0)), hash(cell + vec2(1.0)), local.x),
+        local.y
       );
-    }
-    float fbm(vec2 p) {
-      float v = 0.0; float a = 0.5;
-      for (int i = 0; i < 5; i++) {
-        v += a * noise(p);
-        p = p * 2.1 + vec2(1.3, 2.7);
-        a *= 0.5;
-      }
-      return v;
     }
 
     void main() {
       vec2 uv = gl_FragCoord.xy / u_res;
       uv.x *= u_res.x / u_res.y;
 
-      float t = u_time * 0.12;
+      float time = u_time * 0.55;
+      float turbulence = noise(vec2(uv.x * 4.0, uv.y * 2.5 - time));
+      turbulence += noise(vec2(uv.x * 8.0 + 4.0, uv.y * 4.0 - time * 1.3)) * 0.45;
 
-      // Animated FBM nebula
-      vec2 q = vec2(fbm(uv + t * 0.3), fbm(uv + vec2(1.0, 1.2) + t * 0.2));
-      vec2 r = vec2(fbm(uv + 4.0 * q + vec2(1.7, 9.2) + t * 0.15),
-                    fbm(uv + 4.0 * q + vec2(8.3, 2.8) + t * 0.10));
-      float f = fbm(uv + 4.0 * r);
+      float flameShape = 1.0 - uv.y;
+      float flame = smoothstep(0.25, 1.0, flameShape + (turbulence - 0.55) * 0.42);
+      flame *= smoothstep(1.0, 0.12, uv.y);
 
-      // Color palette: deep indigo → purple → dark teal
-      vec3 col = mix(vec3(0.02, 0.02, 0.08), vec3(0.18, 0.10, 0.40), clamp(f * 2.0, 0.0, 1.0));
-      col = mix(col, vec3(0.04, 0.22, 0.30), clamp(length(q), 0.0, 1.0));
-      col = mix(col, vec3(0.39, 0.40, 0.90), clamp(f * f * 4.0, 0.0, 1.0));
-
-      // Vignette
-      vec2 vctr = uv - vec2(u_res.x / u_res.y * 0.5, 0.5);
-      float vig = 1.0 - smoothstep(0.4, 1.2, length(vctr));
-      col *= vig * 0.8 + 0.1;
+      vec3 smoke = vec3(0.025, 0.028, 0.027);
+      vec3 ember = mix(vec3(0.22, 0.035, 0.008), vec3(0.95, 0.30, 0.055), flame);
+      vec3 col = mix(smoke, ember, flame * 0.72);
+      col += vec3(1.0, 0.53, 0.16) * pow(flame, 5.0) * 0.30;
 
       gl_FragColor = vec4(col, 1.0);
     }
